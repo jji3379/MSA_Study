@@ -2,9 +2,18 @@ package com.elevenst;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class DisplayApplication {
+
+    @Bean
+    // 다른 서비스를 호출하기 위한 RestTemplate
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(DisplayApplication.class);
     }
